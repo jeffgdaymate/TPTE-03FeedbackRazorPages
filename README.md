@@ -1,4 +1,3 @@
-# TPTE-03FeedbackRazorPages
 
 # Objetivos do Projeto
 Este projeto foi desenvolvido com o intuito de criar um sistema de feedbacks simples usando ASP.NET Core e Razor Pages. Aqui estão os principais objetivos e funcionalidades alcançados:
