@@ -1,0 +1,60 @@
+@page "/Feeds/Update/{id:int}"
+@model Aula03.MinimalApi.Pages.Feeds.Update
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Atualizar Feedback</h2>
+            
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <input type="hidden" asp-for="FeedbackDetails.IdFeedback"/>
+
+                <!-- Campo Nome do Cliente -->
+                <div class="form-group">
+                    <label asp-for="FeedbackDetails.NomeCliente">Nome:</label>
+                    <input asp-for="FeedbackDetails.NomeCliente" class="form-control" />
+                    <span asp-validation-for="FeedbackDetails.NomeCliente" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Email do Cliente -->
+                <div class="form-group">
+                    <label asp-for="FeedbackDetails.EmailCliente">Email:</label>
+                    <input asp-for="FeedbackDetails.EmailCliente" class="form-control" />
+                    <span asp-validation-for="FeedbackDetails.EmailCliente" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Data do Feedback -->
+                <div class="form-group">
+                    <label asp-for="FeedbackDetails.DataFeedback">Data:</label>
+                    <input asp-for="FeedbackDetails.DataFeedback" class="form-control" type="date" />
+                    <span asp-validation-for="FeedbackDetails.DataFeedback" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Comentário -->
+                <div class="form-group">
+                    <label asp-for="FeedbackDetails.Comentario">Comentário:</label>
+                    <textarea asp-for="FeedbackDetails.Comentario" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="FeedbackDetails.Comentario" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Avaliação -->
+                <div class="form-group">
+                    <label asp-for="FeedbackDetails.Avaliacao">Avaliação:</label>
+                    <input asp-for="FeedbackDetails.Avaliacao" class="form-control" type="number" min="1" max="5" />
+                    <span asp-validation-for="FeedbackDetails.Avaliacao" class="text-danger"></span>
+                    <small class="form-text text-muted">
+                        Avalie de 1 a 5, onde 1 é "Muito insatisfeito" e 5 é "Muito satisfeito".
+                    </small>
+                </div>
+                
+                <!-- Botões -->
+                <div class="form-group mt-3">
+                    <input type="submit" class="btn btn-success" value="Atualizar">
+                    <a asp-page="/Feeds/Index" class="btn btn-danger">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

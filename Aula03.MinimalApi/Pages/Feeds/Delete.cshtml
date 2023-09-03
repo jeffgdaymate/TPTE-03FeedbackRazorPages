@@ -1,0 +1,27 @@
+@page "/Feeds/Delete/{id:int}"
+@model Aula03.MinimalApi.Pages.Feeds.Delete
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Excluir Feedback</h2>
+            
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="FeedbackDetails.IdFeedback"/>
+
+                <!-- Confirmação -->
+                <div class="alert alert-danger">
+                    Tem certeza de que deseja excluir o feedback de <strong>@Model.FeedbackDetails.NomeCliente</strong>?
+                </div>
+
+                <!-- Botões -->
+                <div class="form-group mt-3">
+                    <input type="submit" class="btn btn-danger" value="Excluir">
+                    <a asp-page="/Feeds/Index" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
